@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path=".gen_src"/>
+	<classpathentry kind="src" path=".gen_src_dto"/>
+	<classpathentry excluding="**/*.dto|**/*.msg|**/*.so|**/*.bo|**/*.jo|**/*.do|**/*.qo" kind="src" path="meta"/>
+	<classpathentry kind="src" path="etc"/>
+	<classpathentry kind="src" path="user_lib"/>
+	<classpathentry kind="con" path="com.tmaxsoft.proobject.studio.probuilder.container"/>
+	<classpathentry kind="src" path="/MKTest"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=".po7_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
