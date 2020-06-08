@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<so:serviceObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:do="http://www.tmax.co.kr/proobject/dataobject" xmlns:flow="http://www.tmax.co.kr/proobject/flow" xmlns:so="http://www.tmax.co.kr/proobject/serviceobject" description="do in/out" logicalName="EchoTest" physicalName="EchoTest" resourcePackage="com.tmax.ai.mktest.so" resourcePath="com/tmax/ai/mktest/so" resourceType="SERVICE_OBJECT" identifier="general" name="EchoTest">
+  <so:inputDo xsi:type="do:dataObjectType" physicalName="DOinput" resourceId="urn:proobject:com.tmax.ai.mktest.so:EchoTest" resourcePackage="com.tmax.ai.mktest.dto" resourcePath="com/tmax/ai/mktest/dto" resourceType="DATA_OBJECT" revision="0" serviceGroupName="MKTestSG"/>
+  <so:outputDo xsi:type="do:dataObjectType" physicalName="DOoutput" resourceId="urn:proobject:com.tmax.ai.mktest.so:EchoTest" resourcePackage="com.tmax.ai.mktest.dto" resourcePath="com/tmax/ai/mktest/dto" resourceType="DATA_OBJECT" revision="0" serviceGroupName="MKTestSG"/>
+  <so:member>
+    <so:variable arrayKind="none" getter="false" initObject="" inject="NONE" kind="DTO" lazy="false" modifier="public" name="input" scope="member" setter="false" size="0">
+      <flow:do inOutType="INPUT" physicalName="DOinput" resourcePath="com/tmax/ai/mktest/dto"/>
+    </so:variable>
+    <so:variable arrayKind="none" getter="false" initObject="" inject="NONE" kind="DTO" lazy="false" modifier="public" name="output" scope="member" setter="false" size="0">
+      <flow:do inOutType="OUTPUT" physicalName="DOoutput" resourcePath="com/tmax/ai/mktest/dto"/>
+    </so:variable>
+  </so:member>
+  <so:wholeImport>
+    <so:importType>com.tmax.proobject.core.ServiceObject</so:importType>
+    <so:importType>com.tmax.proobject.model.business.BusinessObject</so:importType>
+    <so:importType>com.tmax.proobject.model.dataobject.DataObject</so:importType>
+    <so:importType>com.tmax.proobject.engine.servicemanager.*</so:importType>
+    <so:importType>com.tmax.proobject.logger.ProObjectLogger</so:importType>
+    <so:importType>com.tmax.proobject.logger.application.ServiceLogger</so:importType>
+    <so:importType>com.tmax.proobject.model.dto.*</so:importType>
+    <so:importType>com.tmax.proobject.core.DataSource</so:importType>
+    <so:importType>javax.inject.Inject</so:importType>
+    <so:importType>com.tmax.proobject.engine.waitobject.WaitObject</so:importType>
+    <so:importType>java.math.BigDecimal</so:importType>
+    <so:importType>java.util.List</so:importType>
+    <so:importType>java.util.ArrayList</so:importType>
+    <so:importType>java.util.logging.Level</so:importType>
+    <so:importType>java.io.File</so:importType>
+    <so:importType>com.tmax.proobject.model.transaction.TransactionType</so:importType>
+    <so:importType>com.tmax.proobject.service.RCallReturn</so:importType>
+    <so:importType>com.tmax.ai.mktest.dto.DOinput</so:importType>
+    <so:importType>com.tmax.ai.mktest.dto.DOoutput</so:importType>
+  </so:wholeImport>
+  <so:serviceMethod comments="" displayName="service" methodName="service" modifier="public" overrided="true">
+    <flow:flowModule>
+      <flow:entryModule>
+        <flow:name>service</flow:name>
+        <flow:nextEntries>
+          <flow:id>0</flow:id>
+        </flow:nextEntries>
+      </flow:entryModule>
+      <flow:innerModules/>
+      <flow:xorModules/>
+      <flow:virtualModules>
+        <flow:virtualModule nodeId="0">
+          <flow:name>EchoTestMethod</flow:name>
+          <flow:nextEntries/>
+          <flow:code>		 String test = arg0.getEktest();&#xD;
+		 output.setEname(test);&#xD;
+		 &#xD;
+		 logger.info(test);&#xD;
+		 &#xD;
+		 return output;</flow:code>
+        </flow:virtualModule>
+      </flow:virtualModules>
+      <flow:loopModules/>
+      <flow:bizMethodCalls/>
+      <flow:serviceCalls/>
+      <flow:assignModules/>
+      <flow:deferredModules/>
+      <flow:dataObjectCalls/>
+      <flow:replyCalls/>
+    </flow:flowModule>
+    <so:arguments>
+      <flow:argument>
+        <flow:variable kind="DTO" name="arg0">
+          <flow:do physicalName="DOinput" resourcePath="com/tmax/ai/mktest/dto"/>
+        </flow:variable>
+        <flow:sequence>0</flow:sequence>
+      </flow:argument>
+    </so:arguments>
+    <so:returnType kind="DTO">
+      <flow:do physicalName="DOoutput" resourcePath="com/tmax/ai/mktest/dto"/>
+    </so:returnType>
+    <so:classInfo className="EchoTest" classPackageName="com/tmax/ai/mktest/so"/>
+    <so:exceptions>
+      <so:exception>java.lang.Throwable</so:exception>
+    </so:exceptions>
+    <so:annotations>
+      <so:annotation>Override</so:annotation>
+    </so:annotations>
+  </so:serviceMethod>
+  <so:interfaces/>
+</so:serviceObject>
